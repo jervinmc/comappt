@@ -1,23 +1,5 @@
 <template>
   <v-app dark>
-  <v-snackbar
-      top
-      v-model="snackbar.show"
-      :timeout="8000"
-      :color="snackbar.color"
-    >
-      <v-row no-gutters align="center">
-        <v-col cols="2">
-          <v-icon>mdi-{{ snackbar.icon }}</v-icon>
-        </v-col>
-        <v-col>
-          <span>{{ snackbar.text }}</span>
-        </v-col>
-      </v-row>
-      <template v-slot:action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="closeSnackbar">Close</v-btn>
-      </template>
-    </v-snackbar>
     <app-bar @openDrawer="openDrawer" :app_name="route_name"/>
     <v-main>
       <v-container>

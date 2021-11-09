@@ -36,5 +36,5 @@ export const state = () => ({
     }
   };
   
-  export const strict = false;
+  export const strict = true;
   
