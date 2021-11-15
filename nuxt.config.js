@@ -6,9 +6,13 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    // for testing onlys
+    // base: '/dist/',
+    middleware: ['authenticated'],
+  },
   axios: {
-    baseURL: "http://3.16.207.250:9200/"
+    baseURL: "http://18.116.231.248:9200/"
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -48,6 +52,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    'nuxt-basic-auth-module'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -79,7 +84,11 @@ export default {
       }
     }
   },
-
+  basic: {
+    name: 'comapptadmin',
+    pass: 'comapptadmin123!@#',
+    enabled: true // require boolean value(nullable)
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

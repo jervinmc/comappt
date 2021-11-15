@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
-    <app-bar @openDrawer="openDrawer" :app_name="route_name"/>
+    <logout :isViewLogout="isViewLogout" @cancel="isViewLogout=false"/>
+    <app-bar @openDrawer="openDrawer" :app_name="route_name" v-if="$route.name!='index' && $route.name!='login'"/>
     <v-main>
       <v-container>
         <Nuxt />
@@ -15,7 +16,7 @@
       >
       <div class="logout" align="center" >
       <v-divider class="pb-2"/>
-        <div class="white--text">
+        <div class="white--text" @click="isViewLogout=true">
           Logout
         </div>
       </div>
@@ -46,13 +47,15 @@
 import AppBar from '../components/engine/AppBar.vue'
 import Footer from '../components/general/Footer.vue'
 import { mapState, mapActions } from "vuex";
+import Logout from '../components/dialogs/Logout.vue';
 export default {
-  components: { Footer, AppBar },
+  components: { Footer, AppBar, Logout },
   computed:{
     ...mapState("snackbar", ["snackbar", "loading_overlay"]),
   },
   data () {
     return {
+      isViewLogout:false,
       drawer:false,
       route_name:this.$route.name,
       clipped: false,
@@ -92,9 +95,10 @@ export default {
     openDrawer(){
       this.drawer =!this.drawer
     },
+
   },
     created(){
-      
+     
     }
   
 }
