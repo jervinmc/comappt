@@ -74,7 +74,7 @@ export default {
         password:this.password
       }
       try {
-        const response = await this.$axios.post('',credentials,{baseURL:`http://localhost:5000/api/v1/login`,'headers':{
+        const response = await this.$axios.post('',credentials,{baseURL:`http://18.218.238.96:5000/api/v1/login`,'headers':{
             }})
             if(response.data.status=='success'){
               localStorage.setItem('token',response.data.token)

@@ -103,7 +103,7 @@ export default {
       if(this.file=='') return this.submitHandler({"filename":null})
       let form_data = new FormData()
       form_data.append('file',document.getElementById('file').files[0])
-      const response = await this.$axios.post('',form_data,{baseURL:`http://localhost:5000/api/v1/uploadtest`,'headers':{
+      const response = await this.$axios.post('',form_data,{baseURL:`http://18.218.238.96:5000/api/v1/uploadtest`,'headers':{
               'Authorization':`Bearer ${localStorage.getItem('token')}`
             }})
      
