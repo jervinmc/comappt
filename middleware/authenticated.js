@@ -1,27 +1,31 @@
-export default async function(context){
-    if(context.route.name!='index'){
+export default async function (context) {
+    if (context.route.name != 'index') {
         var token = localStorage.getItem('token')
-          const response = await context.$axios.get('',{baseURL:`http://18.218.238.96:5000/api/v1/verify/${token}`,'headers':{
+        const response = await context.$axios.get('', {
+            baseURL: `http://18.218.238.96:5000/api/v1/verify/${token}`, 'headers': {
 
-            }})
-         .then((response)=>{
-                if(!response.data){
+            }
+        })
+            .then((response) => {
+                if (!response.data) {
                     context.redirect('/')
                 }
-            
-            })
-     }
-     else {
-        var token = localStorage.getItem('token')
-        const response = await context.$axios.get('',{baseURL:`http://18.218.238.96:5000/api/v1/verify/${token}`,'headers':{
 
-          }})
-       .then((response)=>{
-              if(response.data){
-                  context.redirect('/engine')
-              }
-          
-          })
-     }
+            })
+    }
+    else {
+        var token = localStorage.getItem('token')
+        const response = await context.$axios.get('', {
+            baseURL: `http://18.218.238.96:5000/api/v1/verify/${token}`, 'headers': {
+
+            }
+        })
+            .then((response) => {
+                if (response.data) {
+                    context.redirect('/engine')
+                }
+
+            })
+    }
 
 }

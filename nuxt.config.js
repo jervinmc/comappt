@@ -84,11 +84,11 @@ export default {
       }
     }
   },
-  basic: {
-    name: 'comapptadmin',
-    pass: 'comapptadmin123!@#',
-    enabled: true // require boolean value(nullable)
-  },
+  // basic: {
+  //   name: 'comapptadmin',
+  //   pass: 'comapptadmin123!@#',
+  //   enabled: true // require boolean value(nullable)
+  // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

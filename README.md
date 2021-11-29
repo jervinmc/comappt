@@ -67,3 +67,14 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+link:
+
+http://3.134.94.48/
+dbHost=comappt.ck9y8ekmk9xh.us-east-2.rds.amazonaws.com
+dbUser=postgres
+dbPort=5432
+dbPassword=comappt123
+dbDatabase=comappt
+
+PGPASSWORD=comappt123 psql --host brokers-prod.cbtm8mtg96gi.ap-southeast-1.rds.amazonaws.com --port 5432 --username postgres comappt

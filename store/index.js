@@ -26,13 +26,25 @@ export const actions = {
           `files/_doc`,body
         );  
   },
+  async updateTruncate({ commit,state }, body) {
+    commit("setTruncate",body)
+},
   
     
 }
 
 export const mutations = {
     SEARCH_DATA(state,payload) {
-      state.search_results=payload.hits.hits;
+      var searchData = []
+      payload.hits.hits.map(data => {
+        data['isTruncate']=true
+        searchData.push(data)
+      })
+      state.search_results=searchData
+  
+    },
+    setTruncate(state,payload) {
+      state.search_results[payload].isTruncate=false
   
     }
   };
