@@ -171,7 +171,7 @@ export default {
       let form_data = new FormData();
       form_data.append("file", document.getElementById("file").files[0]);
       const response = await this.$axios.post("", form_data, {
-        baseURL: `http://54.164.128.119:5000/api/v1/uploadtest`,
+        baseURL: `http://c51b-122-53-220-107.ngrok.io/api/v1/uploadtest`,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
