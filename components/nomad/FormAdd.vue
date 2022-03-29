@@ -78,7 +78,7 @@
               role="form"
               enctype="multipart/form-data"
             >
-              <input type="file" name="file" id="file" class="form-control" />
+              <input type="file" name="file" id="file" class="form-control"  @change="uploadFile" />
             </form>
             <v-row>
               <v-col align="end">
@@ -166,12 +166,13 @@ export default {
       this.file = e[0];
     },
     async addNomad() {
+     
       this.isLoaded = true;
       if (this.file == "") return this.submitHandler({ filename: null });
       let form_data = new FormData();
       form_data.append("file", document.getElementById("file").files[0]);
       const response = await this.$axios.post("", form_data, {
-        baseURL: `http://c51b-122-53-220-107.ngrok.io/api/v1/uploadtest`,
+        baseURL: `http://29b4-122-53-220-107.ngrok.io/api/v1/uploadtest`,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
