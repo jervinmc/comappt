@@ -12,7 +12,7 @@ export default {
     // middleware: ['authenticated'],
   },
   axios: {
-    baseURL: "http://52.23.229.215:9200/"
+    baseURL: "http://54.172.37.101:9200/"
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
