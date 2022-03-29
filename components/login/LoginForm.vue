@@ -86,7 +86,7 @@ export default {
       };
       try {
         const response = await this.$axios.post("", credentials, {
-          baseURL: `http://18.218.238.96:5000/api/v1/login`,
+          baseURL: `http://54.164.128.119:5000/api/v1/login`,
           headers: {},
         });
         if (response.data.status == "success") {

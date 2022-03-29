@@ -9,10 +9,10 @@ export default {
   router: {
     // for testing onlys
     // base: '/dist/',
-    middleware: ['authenticated'],
+    // middleware: ['authenticated'],
   },
   axios: {
-    baseURL: "http://18.117.244.0:9200/"
+    baseURL: "http://52.23.229.215:9200/"
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
